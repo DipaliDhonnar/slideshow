@@ -5,34 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>slideshowe</title>
     <style>
+        body{
+            background-color: rgb(203, 239, 244);
+        }
         .container{
         width: fit-content;
-        margin: 50px auto;
+        margin: 100px auto;
         position: relative;
     }
     .slide-img{
             height: 400px;
             width: 500px;
             object-fit: cover;
-            border-radius:35px;
+            border-radius:25px;
         }
         .slide-action-icon{
-            height: 50px;
+            height: 40px;
             position: absolute;
             cursor: pointer;
             transition: 0.6s;
+            top: 50%;
         }
         .icon-next{
+          
             right: 5px;
-            top: 45%;
+           
         }
 
         .icon-next:hover{
             transform: scale(0.8) translateX(13px) ;
         }
         .icon-previous{
-            left: 15px;
-            top: 50%;
+           
+            left: 5px;
+            
         }
         .icon-previous:hover{
             transform: scale(0.8) translateX(-13px);
@@ -46,7 +52,7 @@
         <img src="./img/back.png" alt="previous" onclick="previous()"class="slide-action-icon icon-previous">
     </div>
     <script>
-        const images = ["./img/home.jpg","./img/home2.jpg","./img/home5.jpg","./img/home6.jpg", ]
+        const images = ["./img/home.jpg","./img/home2.jpg","./img/home3.jpg","./img/home4.jpg","./img/home5.jpg","./img/home6.jpg", ]
 
         let index = 0;
         const slideImg = document.getElementById('slide-img');
@@ -71,6 +77,7 @@
             }
             slideImg.src = images[index]
         }
+        setInterval(next, 5000);
 </script>
 </body>
 </html>
