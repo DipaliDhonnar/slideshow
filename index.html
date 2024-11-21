@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>slideshowe</title>
     <style>
-           .container{
+        .container{
         width: fit-content;
         margin: 50px auto;
         position: relative;
@@ -21,8 +21,26 @@
 <body>
     <div class="container">
         <img src="./img/home.jpg" alt="image" class="slide-img" id="slide-img">
-        <img src="./img/next.png" alt="next"  class="slide-action-icon icon-next">
-        <img src="./img/back.png" alt="previous"class="slide-action-icon icon-previous">
+        <img src="./img/next.png" alt="next"  onclick="next()" class="slide-action-icon icon-next">
+        <img src="./img/back.png" alt="previous" onclick="previous()"class="slide-action-icon icon-previous">
     </div>
+    <script>
+        const images = ["./img/home.jpg", "./img/home1.jpg","./img/home2.jpg","./img/home3.jpg","./img/home4.jpg","./img/home5.jpg","./img/home6.jpg", ]
+
+        let index = 0;
+        const slideImg = document.getElementById('slide-img');
+
+        function next(){
+            if(index < images.length -1)
+        {
+            index++;
+        }
+        else{
+            index = 0;
+        }
+        slideImg.src = images[index]
+
+        }
+</script>
 </body>
 </html>
